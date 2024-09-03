@@ -1,10 +1,10 @@
 import controller.UserController;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import view.UserView;
 
 public class Main {
+
   public static void main(String[] args) {
     SwingUtilities.invokeLater(() -> {
       UserView view = new UserView();
@@ -22,7 +22,8 @@ public class Main {
             int id = Integer.parseInt(JOptionPane.showInputDialog("Enter User ID:"));
             String name = JOptionPane.showInputDialog("Enter User Name:");
             String email = JOptionPane.showInputDialog("Enter User Email:");
-            controller.addUser(id, name, email);
+            String phoneNumber = JOptionPane.showInputDialog("Enter User Phone Number:");
+            controller.addUser(id, name, email, phoneNumber);
             break;
 
           case 1: // View User
@@ -31,14 +32,17 @@ public class Main {
             break;
 
           case 2: // Update User
-            int updateId = Integer.parseInt(JOptionPane.showInputDialog("Enter User ID to update:"));
+            int updateId = Integer.parseInt(
+                JOptionPane.showInputDialog("Enter User ID to update:"));
             String newName = JOptionPane.showInputDialog("Enter new User Name:");
             String newEmail = JOptionPane.showInputDialog("Enter new User Email:");
-            controller.updateUser(updateId, newName, newEmail);
+            String newPhoneNumber = JOptionPane.showInputDialog("Enter new User Phone Number:");
+            controller.updateUser(updateId, newName, newEmail, newPhoneNumber);
             break;
 
           case 3: // Delete User
-            int deleteId = Integer.parseInt(JOptionPane.showInputDialog("Enter User ID to delete:"));
+            int deleteId = Integer.parseInt(
+                JOptionPane.showInputDialog("Enter User ID to delete:"));
             controller.deleteUser(deleteId);
             break;
 

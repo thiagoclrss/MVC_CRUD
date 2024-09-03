@@ -6,6 +6,7 @@ import model.User;
 import view.UserView;
 
 public class UserController {
+
   private Map<Integer, User> userDatabase = new HashMap<>();
   private UserView view;
 
@@ -14,8 +15,8 @@ public class UserController {
   }
 
   // Create User
-  public void addUser(int id, String name, String email) {
-    User user = new User(id, name, email);
+  public void addUser(int id, String name, String email, String phoneNumber) {
+    User user = new User(id, name, email, phoneNumber);
     user.addObserver(view);
     userDatabase.put(id, user);
     view.displayUserDetails(user);
@@ -33,11 +34,12 @@ public class UserController {
   }
 
   // Update User
-  public void updateUser(int id, String name, String email) {
+  public void updateUser(int id, String name, String email, String phoneNumber) {
     User user = userDatabase.get(id);
     if (user != null) {
       user.setName(name);
       user.setEmail(email);
+      user.setPhoneNumber(phoneNumber);
       System.out.println("User updated successfully.");
     } else {
       System.out.println("User not found.");

@@ -1,18 +1,19 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
 
 public class User extends Observable {
+
   private int id;
   private String name;
   private String email;
+  private String phoneNumber;
 
-  public User(int id, String name, String email) {
+  public User(int id, String name, String email, String phoneNumber) {
     this.id = id;
     this.name = name;
     this.email = email;
+    this.phoneNumber = phoneNumber;
   }
 
   // Getters and Setters
@@ -42,6 +43,16 @@ public class User extends Observable {
 
   public void setEmail(String email) {
     this.email = email;
+    setChanged();
+    notifyObservers();
+  }
+
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
     setChanged();
     notifyObservers();
   }
