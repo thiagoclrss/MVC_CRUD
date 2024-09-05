@@ -16,19 +16,16 @@ public class UserView extends JFrame implements Observer {
   private JLabel userPhoneNumberLabel;
 
   public UserView() {
-    // Setting up the JFrame
     setTitle("User Information");
     setSize(300, 200);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLayout(new GridLayout(3, 1));
 
-    // Initialize labels
     userIdLabel = new JLabel("ID: ");
     userNameLabel = new JLabel("Name: ");
     userEmailLabel = new JLabel("Email: ");
     userPhoneNumberLabel = new JLabel("Phone Number: ");
 
-    // Add labels to the JFrame
     add(userIdLabel);
     add(userNameLabel);
     add(userEmailLabel);
@@ -52,7 +49,6 @@ public class UserView extends JFrame implements Observer {
       userEmailLabel.setText("Email: " + user.getEmail());
       userPhoneNumberLabel.setText("Phone Number: " + user.getPhoneNumber());
 
-      // Force the layout to update and repaint the frame
       revalidate();
       repaint();
     });

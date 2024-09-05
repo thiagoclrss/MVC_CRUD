@@ -14,7 +14,6 @@ public class UserController {
     this.view = view;
   }
 
-  // Create User
   public void addUser(int id, String name, String email, String phoneNumber) {
     User user = new User(id, name, email, phoneNumber);
     user.addObserver(view);
@@ -23,7 +22,6 @@ public class UserController {
     System.out.println("User added successfully.");
   }
 
-  // Read User
   public void getUser(int id) {
     User user = userDatabase.get(id);
     if (user != null) {
@@ -33,7 +31,6 @@ public class UserController {
     }
   }
 
-  // Update User
   public void updateUser(int id, String name, String email, String phoneNumber) {
     User user = userDatabase.get(id);
     if (user != null) {
@@ -46,7 +43,6 @@ public class UserController {
     }
   }
 
-  // Delete User
   public void deleteUser(int id) {
     if (userDatabase.containsKey(id)) {
       userDatabase.remove(id);

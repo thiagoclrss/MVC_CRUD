@@ -16,7 +16,6 @@ public class User extends Observable {
     this.phoneNumber = phoneNumber;
   }
 
-  // Getters and Setters
   public int getId() {
     return id;
   }

@@ -18,7 +18,7 @@ public class Main {
             JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
         switch (choice) {
-          case 0: // Add User
+          case 0:
             int id = Integer.parseInt(JOptionPane.showInputDialog("Enter User ID:"));
             String name = JOptionPane.showInputDialog("Enter User Name:");
             String email = JOptionPane.showInputDialog("Enter User Email:");
@@ -26,12 +26,12 @@ public class Main {
             controller.addUser(id, name, email, phoneNumber);
             break;
 
-          case 1: // View User
+          case 1:
             int viewId = Integer.parseInt(JOptionPane.showInputDialog("Enter User ID to view:"));
             controller.getUser(viewId);
             break;
 
-          case 2: // Update User
+          case 2:
             int updateId = Integer.parseInt(
                 JOptionPane.showInputDialog("Enter User ID to update:"));
             String newName = JOptionPane.showInputDialog("Enter new User Name:");
@@ -40,13 +40,13 @@ public class Main {
             controller.updateUser(updateId, newName, newEmail, newPhoneNumber);
             break;
 
-          case 3: // Delete User
+          case 3:
             int deleteId = Integer.parseInt(
                 JOptionPane.showInputDialog("Enter User ID to delete:"));
             controller.deleteUser(deleteId);
             break;
 
-          case 4: // Exit
+          case 4:
             running = false;
             break;
 
